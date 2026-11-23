@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% load django_bootstrap5 %}
+{% block title %} Add Book {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+{#                <h3>Add a  book </h3>#}
+               <form action="{% url 'add_book' %}" method="post">
+                {% csrf_token %}
+{#            tells it u display all the fields in the form in the my_form#}
+{#                {{ form }}#}
+                     {% bootstrap_form form %}
+                <button type="submit" class="btn btn-secondary"> Save Book</button>
+                </form>
+             </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block title %} View Book {% endblock %}
+
+{% block content %}
+    <div class="container">
+    {% for book in books %}
+           <p>{{ book.title }}</p>
+           <p> {{ book.isbn }}</p>
+           <p>{{ book.cost }}</p>
+        <hr>
+    {% endfor %}
+    </div>
+{% endblock %}
